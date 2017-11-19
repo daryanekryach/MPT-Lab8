@@ -18,7 +18,7 @@ public class Github {
     private ArrayList<Repository> mostStarredRepositories;
     private ArrayList<Repository> mostCommittedRepositories;
     private JSONParser parser;
-    private final String TOKEN = "ffc7f298a37c06b8bb781fc976b71780aa7b9416";
+    private final String TOKEN = "9129bb1665168c2dbb12a04c6a2074efb181c630";
 
     public Github() {
         httpclient = HttpClients.createDefault();
@@ -164,7 +164,7 @@ public class Github {
                 .setPath("/search/repositories")
                 .setParameter("q", "created:" + dateFrom + ".." + dateTo);
         HttpGet httpGet = new HttpGet(URI.toString());
-        httpGet.addHeader("Authorization", "token ffc7f298a37c06b8bb781fc976b71780aa7b9416");
+        httpGet.addHeader("Authorization", "token " + TOKEN);
         httpGet.addHeader("Accept", "application/vnd.github.cloak-preview+json");
         return httpclient.execute(httpGet);
     }

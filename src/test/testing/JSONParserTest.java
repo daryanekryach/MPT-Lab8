@@ -46,6 +46,12 @@ public class JSONParserTest {
 
     @Test
     public void parseRepositoryContributionJsonTest() {
-
+        ArrayList<Contributor> contributors = new ArrayList<>();
+        Contributor contributor = new Contributor();
+        contributor.setUser("test");
+        contributor.setContributionCount(1);
+        contributors.add(contributor);
+        assertEquals(contributors.get(0).getUser(), parser.parseRepositoryContributionJson(contributionJSON)
+                .get(0).getUser());
     }
 }
