@@ -20,4 +20,9 @@ public class Main {
         Metrics.getAllMetrics();
         return true;
     }
+
+    private Main() throws InstantiationException
+    {
+        throw new InstantiationException("Instances of this type are forbidden.");
+    }
 }
