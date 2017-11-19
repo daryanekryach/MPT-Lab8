@@ -15,7 +15,7 @@ public class Main {
         Metrics.stop();
         Metrics.getAllMetrics();
         Metrics.start();
-        github.getMostCommittedRepositoriesData("2017-05-05","2017-05-13");
+        github.getMostCommittedRepositoriesData("2017-05-01","2017-05-07");
         Metrics.stop();
         Metrics.getAllMetrics();
         return true;

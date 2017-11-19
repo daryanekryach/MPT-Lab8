@@ -5,6 +5,9 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 
+/**
+ * Class that provides parsing(or deserialization) of JSON data.
+ */
 public class JSONParser {
 
     /**

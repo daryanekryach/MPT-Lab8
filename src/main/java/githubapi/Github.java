@@ -29,7 +29,6 @@ public class Github {
 
     /**
      * Method executes request for getting most starred repositories.
-     *
      * @return CloseableHttpResponse response
      * @throws IOException
      */
@@ -48,8 +47,7 @@ public class Github {
     }
 
     /**
-     * Method that reads the response from request into Repository instance.
-     *
+     * Method that reads response the from most starred request into Repository instance.
      * @param responseRepository - request response
      * @return ArrayList<Repository> with parsed repositories
      * @throws IOException
@@ -113,7 +111,6 @@ public class Github {
 
     /**
      * Method that reads the response from request into Contributor instance.
-     *
      * @param response - request response
      * @return ArrayList<Contributor> with parsed contributors.
      * @throws IOException
@@ -132,6 +129,12 @@ public class Github {
         return contributors;
     }
 
+    /**
+     * Method that reads response from the most committed request into Repository instance.
+     * @param response - request response
+     * @return ArrayList<Repository> with parsed repositories
+     * @throws IOException
+     */
     private ArrayList<Repository> getMostCommitted(CloseableHttpResponse response) throws IOException {
         try {
             BufferedReader br = new BufferedReader(new InputStreamReader(response
@@ -157,6 +160,11 @@ public class Github {
         return mostStarredRepositories;
     }
 
+    /**
+     * Method executes request for getting most committed repositories.
+     * @return CloseableHttpResponse response
+     * @throws IOException
+     */
     private CloseableHttpResponse requestMostCommitted(String dateFrom, String dateTo) throws IOException {
         URIBuilder URI = new URIBuilder()
                 .setScheme("https")
@@ -169,12 +177,15 @@ public class Github {
         return httpclient.execute(httpGet);
     }
 
+    /**
+     * Method that prints info for each most commited repository.
+     */
     private void printMostCommitted() {
         System.out.println("\n***************MOST COMMITTED REPOSITORIES***************");
         for (Repository repo : mostCommittedRepositories) {
             System.out.println("\n#" + (mostCommittedRepositories.indexOf(repo) + 1));
             System.out.println("NAME: " + repo.getName());
-            System.out.println("OWNER" + repo.getOwner());
+            System.out.println("OWNER: " + repo.getOwner());
             System.out.println("DESCRIPTION: " + repo.getDescription());
             System.out.println("LANGUAGE: " + repo.getLanguage());
             System.out.println("NUMBER OF CONTRIBUTIONS: " + repo.getContributionCount());
@@ -193,12 +204,24 @@ public class Github {
         }
     }
 
+    /**
+     * Mwthod that executes other methods in order to get the most starred repositories.
+     * @return
+     * @throws IOException
+     */
     public boolean getMostStarredRepositoriesData() throws IOException {
         getMostStarred(requestMostStarred());
         printMostStarred();
         return true;
     }
 
+    /**
+     * Method that executes other methods in order to get the most committed repositories.
+     * @param dateFrom - start date
+     * @param dateTo - end date
+     * @return
+     * @throws IOException
+     */
     public boolean getMostCommittedRepositoriesData(String dateFrom, String dateTo) throws IOException {
         getMostCommitted(requestMostCommitted(dateFrom, dateTo));
         printMostCommitted();
