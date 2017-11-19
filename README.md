@@ -5,9 +5,9 @@
 [![Codacy Badge](https://api.codacy.com/project/badge/Coverage/611ab9c201814f28b6d38e22041481ee)](https://www.codacy.com/app/daryanekryach/MPT-Lab8?utm_source=github.com&utm_medium=referral&utm_content=daryanekryach/MPT-Lab8&utm_campaign=Badge_Coverage) 
 [![codecov](https://codecov.io/gh/daryanekryach/MPT-Lab8/branch/master/graph/badge.svg)](https://codecov.io/gh/daryanekryach/MPT-Lab8)
 
-***
-
 *Repository of 8th MTP lab with using of GitHub API and HttpClient*
+
+***
 
 ## TASK
 <p>Using GitHub REST API and Apache HttpClient get the list of the most starred repos and the most committed repositories (community made the largest number of commits) for 1 week (not last). Print 10 repositories (short information about the repository (name, description, language) and 5 account names, who made the most number of commits in this repository during this period of time).</p>
