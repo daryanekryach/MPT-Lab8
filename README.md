@@ -5,6 +5,8 @@
 [![Codacy Badge](https://api.codacy.com/project/badge/Coverage/611ab9c201814f28b6d38e22041481ee)](https://www.codacy.com/app/daryanekryach/MPT-Lab8?utm_source=github.com&utm_medium=referral&utm_content=daryanekryach/MPT-Lab8&utm_campaign=Badge_Coverage) 
 [![codecov](https://codecov.io/gh/daryanekryach/MPT-Lab8/branch/master/graph/badge.svg)](https://codecov.io/gh/daryanekryach/MPT-Lab8)
 
+***
+
 *Repository of 8th MTP lab with using of GitHub API and HttpClient*
 
 ## TASK
@@ -134,7 +136,7 @@
 	---> 30 by ncanceill<br/>
   
 > Execution time is 20126 ms<br/>Used memory is 5.122947692871094 mb
-  
+  ***
 ### 10 THE MOST COMMITED REPOSITORIES FROM 2017-05-01 TO 2017-05-07</h3>
 * #1<br/>
 **NAME:** mapd-core<br/>
